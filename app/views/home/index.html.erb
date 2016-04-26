@@ -1,0 +1,22 @@
+<div>
+    <h2>Authors</h2>
+    <% @authors.each do |author| %>
+        <ul>
+	    <li><%= author.name %></li>
+	    <li><%= author.email %></li>
+	</ul>
+    <% end %>
+</div>
+<div>
+    <h2>Books</h2>
+    <% @books.each do |book| %>
+	<ul>
+	    <li><%= book.title %></li>
+	    <li>by <%= book.author.name %></li>
+	    <li><%= book.summary %></li>
+	    <li><%= local_time(book.created_at) %></li>
+	</ul>
+    <% end %>
+</div>
+
+<%= paginate @books %>
